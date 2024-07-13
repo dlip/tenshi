@@ -24,9 +24,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="1.888"
-     inkscape:cx="606.46186"
-     inkscape:cy="320.70975"
+     inkscape:zoom="1.3350176"
+     inkscape:cx="648.68059"
+     inkscape:cy="326.96198"
      inkscape:window-width="1918"
      inkscape:window-height="1025"
      inkscape:window-x="0"
@@ -127,6 +127,20 @@
            x="438.46207"
            y="224.21213"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;font-family:HanaMinA;-inkscape-font-specification:HanaMinA">tenshi v1.0</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;font-family:HanaMinA;-inkscape-font-specification:HanaMinA;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1"
+         x="469.69421"
+         y="459.27225"
+         id="text3"
+         inkscape:export-filename="url.png"
+         inkscape:export-xdpi="266.55063"
+         inkscape:export-ydpi="266.55063"><tspan
+           sodipodi:role="line"
+           id="tspan3"
+           x="469.69421"
+           y="459.27225"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans Bold'">github.com/dlip/tenshi</tspan></text>
     </g>
   </g>
 </svg>
