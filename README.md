@@ -8,7 +8,7 @@
 - 2 x USB-C cables
 - 0-2 x Cirque 40mm Trackpads TM040040-2024-302 with flat overlay
 - 0-2 x Hirose FH12-12S-0.5SH FFC/FPC connectors
-- 0-2 FFC/FPC cables - 12 position, 0.5mm pitch, same-sided contacts
+- 0-2 (length?) FFC/FPC cables - 12 position, 0.5mm pitch, same-sided contacts
 - 32 x 1N4148 SOD-123 Diodes
 - 32 x kailh hotswap sockets
 - 28-32 x low profile choc switches and keycaps
