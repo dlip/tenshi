@@ -25,10 +25,10 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="1.888"
-     inkscape:cx="524.36441"
-     inkscape:cy="320.44492"
-     inkscape:window-width="1920"
-     inkscape:window-height="1080"
+     inkscape:cx="606.46186"
+     inkscape:cy="320.70975"
+     inkscape:window-width="1918"
+     inkscape:window-height="1025"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -102,6 +102,31 @@
            id="tspan40"
            x="373.18756"
            y="193.7442" /></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:74.6667px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans Bold';text-align:center;text-anchor:middle;fill:#000080;fill-opacity:0.479224"
+         x="439.02689"
+         y="194.21593"
+         id="text1"
+         inkscape:export-filename="name.png"
+         inkscape:export-xdpi="534.32916"
+         inkscape:export-ydpi="534.32916"><tspan
+           sodipodi:role="line"
+           id="tspan1"
+           x="439.02689"
+           y="194.21593"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:HanaMinA;-inkscape-font-specification:HanaMinA;fill:#000000;fill-opacity:1">天使</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;font-family:HanaMinA;-inkscape-font-specification:HanaMinA;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1"
+         x="438.46207"
+         y="224.21213"
+         id="text2"><tspan
+           sodipodi:role="line"
+           id="tspan2"
+           x="438.46207"
+           y="224.21213"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;font-family:HanaMinA;-inkscape-font-specification:HanaMinA">tenshi v1.0</tspan></text>
     </g>
   </g>
 </svg>
