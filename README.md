@@ -1,4 +1,14 @@
-# WIP Tenshi Keyboard
+# Tenshi Keyboard
+
+![Tenshi](./images/tenshi.jpg)
+
+![Track](./images/track.jpg)
+
+- RP2040-Zero controller
+- Split using USB-C to connect the halves
+- Adjustable Dual Cirque 40mm trackpads
+- QMK Firmware
+- Custom PCB and case
 
 ## BOM
 
@@ -11,6 +21,11 @@
 - 0-2 FFC/FPC cables - 5cm length, 12 position, 0.5mm pitch, same-sided contacts
 - 32 x 1N4148 SOD-123 Diodes
 - 32 x kailh hotswap sockets
-- 28-32 x low profile choc switches and keycaps
+- 32 x low profile choc switches and keycaps
 - 6 x Knurled Insert Nuts M2 x 3mm Length x 3.5mm outer diameter
 - 6 x M2 4mm flat head screws
+- 8 x Rubber feet
+
+## Printables
+
+The .stls are in the [printables](./printables) folder and there is also the [OnShape Project](https://cad.onshape.com/documents/9fc41580bdc06f2de5a54d4e/w/2ac3b2b1ad9676183a17550a/e/836a95015accbfb788e70834) in case you want to make modifications.
