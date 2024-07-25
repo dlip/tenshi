@@ -33,8 +33,8 @@ The .stls are in the [printables](./printables) folder and there is also the [On
 
 ## Build Pics
 
-[Back](./images/build-back.jpg)
+![Back](./images/build-back.jpg)
 
-[Front](./images/build-front.jpg)
+![Front](./images/build-front.jpg)
 
-[Case](./images/build-case.jpg)
+![Case](./images/build-case.jpg)
