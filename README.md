@@ -6,9 +6,10 @@
 
 - RP2040-Zero controller
 - Split using USB-C to connect the halves
-- Adjustable Dual Cirque 40mm trackpads
+- Slide-adjustable Dual Cirque 40mm trackpads
 - QMK Firmware
 - Custom PCB and case
+- Name from Japanense means angel (the trackpads are the halos)
 
 ## BOM
 
@@ -29,3 +30,11 @@
 ## Printables
 
 The .stls are in the [printables](./printables) folder and there is also the [OnShape Project](https://cad.onshape.com/documents/9fc41580bdc06f2de5a54d4e/w/2ac3b2b1ad9676183a17550a/e/836a95015accbfb788e70834) in case you want to make modifications.
+
+## Build Pics
+
+[Back](./images/build-back.jpg)
+
+[Front](./images/build-front.jpg)
+
+[Case](./images/build-case.jpg)
