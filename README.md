@@ -7,7 +7,7 @@
 - RP2040-Zero controllers
 - Split using USB-C to connect the halves
 - Slide-adjustable Dual Cirque 40mm trackpads
-- QMK Firmware
+- [QMK Firmware](https://github.com/dlip/qmk_firmware/tree/dlip/keyboards/tenshi)
 - Custom PCB and case
 - Name from Japanese means angel (the trackpads are the halos)
 
