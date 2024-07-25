@@ -4,12 +4,12 @@
 
 ![Track](./images/track.jpg)
 
-- RP2040-Zero controller
+- RP2040-Zero controllers
 - Split using USB-C to connect the halves
 - Slide-adjustable Dual Cirque 40mm trackpads
 - QMK Firmware
 - Custom PCB and case
-- Name from Japanense means angel (the trackpads are the halos)
+- Name from Japanese means angel (the trackpads are the halos)
 
 ## BOM
 
