@@ -14,13 +14,14 @@ units:
   # Footprints
   rp2040zero_x: 18
   rp2040zero_y: 23.5
-  usb_x: 8.94
-  usb_y: 7.35
   fpc_x: 5
   fpc_y: 11
 points:
   zones:
     matrix:
+      mirror: &mirror
+        ref: matrix_index_top
+        distance: 52
       anchor:
         shift: [30, -80]
       key:
@@ -29,7 +30,7 @@ points:
       columns:
         pinky:
           key:
-            splay: 5
+            splay: -20
             column_net: lGP9
             mirror.column_net: rGP9
         ring:
@@ -64,76 +65,63 @@ points:
           row_net: lGP15
           mirror.row_net: rGP15
     thumbs:
+      mirror: *mirror
       key:
         padding: 1ky
         spread: 1kx
       anchor:
         ref: matrix_index_bottom
-        shift: [.9kx, -1.2ky]
+        shift: [1.05kx, -.5ky]
       columns:
         inner:
           key:
-            width: 1.5kx
-            splay: -20
-            stagger: -0.2ky
+            splay: -10
             column_net: lGP11
             mirror.column_net: rGP11
         outer:
           key:
-            width: 1.5kx
-            spread: 1ky+1
             column_net: lGP12
             mirror.column_net: rGP12
       rows:
-        bottom:
-          row_net: lGP28
-          mirror.row_net: rGP28
         top:
           row_net: lGP29
           mirror.row_net: rGP29
     mcu:
       anchor:
-        ref: matrix_middle_top
-        shift: [2.3kx, -.5ky]
+        aggregate.parts: [matrix_index_top, mirror_matrix_index_top]
+        shift: [0, -8]
       key:
         width: rp2040zero_x
         height: rp2040zero_y
     cirque:
       anchor:
-        ref: mcu
-        shift: [.5kx, -1.5ky]
+        aggregate.parts: [matrix_index_top, mirror_matrix_index_top]
+        shift: [0, -25]
       key:
         width: rp2040zero_x
         height: rp2040zero_y
     fpc:
       anchor:
         ref: mcu
-        shift: [0.5kx, -1.5ky]
+        shift: [0kx, -1.28ky]
       key:
         width: fpc_x
         height: fpc_y
-    usb:
-      anchor:
-        ref: matrix_middle_top
-        shift: [1.1kx, .32ky]
-      key:
-        width: usb_x
-        height: usb_y
     holeRingTop:
+      mirror: *mirror
       anchor:
         ref: [matrix_ring_top]
         shift: [0.33px, 0.56py]
     holeRingBottom:
+      mirror: *mirror
       anchor:
         ref: [matrix_ring_bottom]
-        shift: [-0.35kx, -0.7ky]
+        shift: [-0.35kx, -0.75ky]
     holeOuterThumbs:
+      mirror: *mirror
       anchor:
         ref: [matrix_index_bottom]
-        shift: [0.6kx, -0.45ky]
-  mirror: &mirror
-    ref: matrix_index_top
-    distance: 120
+        shift: [0.2kx, -0.7ky]
 outlines:
   keys:
     - what: rectangle
@@ -150,63 +138,45 @@ outlines:
           shift: [-0.5px, 0.5py]
         - ref: matrix_middle_top
           shift: [-0.5px, 0.5py]
-        - ref: usb
-          shift: [usb_x/2, usb_y/2]
-        - ref: mcu
-          shift: [-rp2040zero_x/2, rp2040zero_y/2+2]
-        - ref: mcu
-          shift: [rp2040zero_x/2+4, rp2040zero_y/2+2]
-        - ref: thumbs_outer_top
-          shift: [-0.32px, 0.5py]
-        - ref: thumbs_outer_top
+        - ref: matrix_middle_top
           shift: [0.5px, 0.5py]
-        - ref: thumbs_outer_bottom
+        - ref: matrix_index_top
           shift: [0.5px, 0.5py]
-        - ref: thumbs_outer_bottom
-          shift: [0.5px, -0.5py]
-        - ref: thumbs_inner_bottom
-          shift: [-0.5px, -0.5py]
-        - ref: thumbs_inner_bottom
-          shift: [-0.5px, 0.5py]
-        - ref: matrix_pinky_bottom
-          shift: [-0.5px, -0.5py]
-  boardRight:
-    - what: polygon
-      operation: stack
-      fillet: 1
-      points:
-        - ref: mirror_matrix_pinky_top
+        - ref: mirror_matrix_index_top
+          shift: [0.5px, 0.5py]
+        - ref: mirror_matrix_middle_top
+          shift: [0.5px, 0.5py]
+        - ref: mirror_matrix_middle_top
           shift: [-0.5px, 0.5py]
         - ref: mirror_matrix_ring_top
           shift: [-0.5px, 0.5py]
-        - ref: mirror_matrix_middle_top
-          shift: [-0.5px, 0.5py]
-        - ref: mirror_usb
-          shift: [usb_x/2, usb_y/2]
-        - ref: mirror_mcu
-          shift: [-rp2040zero_x/2, rp2040zero_y/2+2]
-        - ref: mirror_mcu
-          shift: [rp2040zero_x/2+4, rp2040zero_y/2+2]
-        - ref: mirror_thumbs_outer_top
-          shift: [-0.32px, 0.5py]
-        - ref: mirror_thumbs_outer_top
-          shift: [0.5px, 0.5py]
-        - ref: mirror_thumbs_outer_bottom
-          shift: [0.5px, 0.5py]
-        - ref: mirror_thumbs_outer_bottom
-          shift: [0.5px, -0.5py]
-        - ref: mirror_thumbs_inner_bottom
-          shift: [-0.5px, -0.5py]
-        - ref: mirror_thumbs_inner_bottom
+        - ref: mirror_matrix_pinky_top
           shift: [-0.5px, 0.5py]
         - ref: mirror_matrix_pinky_bottom
           shift: [-0.5px, -0.5py]
+        - ref: mirror_thumbs_inner_top
+          shift: [-0.5px, -0.5py]
+        - ref: mirror_thumbs_outer_top
+          shift: [0.5px, -0.5py] 
+        - ref: mirror_thumbs_outer_top
+          shift: [0.5px, 0.5py]
+        - ref: mirror_thumbs_outer_top
+          shift: [0.5px, 0.5py]                   
+        - ref: thumbs_outer_top
+          shift: [0.5px, 0.5py]
+        - ref: thumbs_outer_top
+          shift: [0.5px, 0.5py]
+        - ref: thumbs_outer_top
+          shift: [0.5px, -0.5py]
+        - ref: thumbs_inner_top
+          shift: [-0.5px, -0.5py]
+        - ref: matrix_pinky_bottom
+          shift: [-0.5px, -0.5py]
   board:
     - boardLeft
-    - boardRight
   _mcu:
     - what: rectangle
-      where: /mcu/
+      where: /^mcu/
       size: [rp2040zero_x, rp2040zero_y]
   _fpc:
     - what: rectangle
@@ -216,10 +186,10 @@ outlines:
     - what: circle
       where: /cirque/
       radius: 20
-  _usb:
-    - what: rectangle
-      where: /usb/
-      size: [usb_x, usb_y]
+  _cirque_outer:
+    - what: circle
+      where: /cirque/
+      radius: 21
   _mountingLeft:
     - what: circle
       where: /^hole/
@@ -238,113 +208,12 @@ outlines:
       radius: standoffRadius
   combo:
     - ^boardLeft
-    - ^boardRight
     - ^keys
     - ^_mcu
     - ^_fpc
     - ^_cirque
-    - ^_usb
+    - ^_cirque_outer
     - ^_standoffLeft
     - ^_standoffRight
     - ^_mountingLeft
     - ^_mountingRight
-pcbs:
-  tenshi:
-    outlines:
-      main:
-        outline: board
-    footprints:
-      chocHotswapLeft:
-        what: choc
-        where: /^(thumb|matrix)/
-        params:
-          keycaps: true
-          hotswap: true
-          from: "{{column_net}}"
-          to: "{{colrow}}"
-      diodeLeft:
-        what: diode
-        where: /^(thumb|matrix)/
-        params:
-          from: "{{colrow}}"
-          to: "{{row_net}}"
-        adjust:
-          shift: [0, -5]
-      chocHotswapRight:
-        what: choc
-        where: /^mirror_(thumb|matrix)/
-        params:
-          keycaps: true
-          hotswap: true
-          from: "{{mirror.column_net}}"
-          to: "{{colrow}}"
-      diodeRight:
-        what: diode
-        where: /^mirror_(thumb|matrix)/
-        params:
-          from: "{{colrow}}"
-          to: "{{mirror.row_net}}"
-        adjust:
-          shift: [0, -5]
-      mcuLeft:
-        what: rp2040zero
-        where: mcu
-        adjust:
-          shift: [-rp2040zero_x / 2, -rp2040zero_y / 2]
-        params:
-          reverse: true
-          P5V: lP5V
-          GND: lGND
-          P3V3: lP3V3
-          GP29: lGP29
-          GP28: lGP28
-          GP27: lGP27
-          GP26: lGP26
-          GP15: lGP15
-          GP14: lGP14
-          GP13: lGP13
-          GP12: lGP12
-          GP11: lGP11
-          GP10: lGP10
-          GP9: lGP9
-          GP8: lGP8
-          GP7: lGP7
-          GP6: lGP6
-          GP5: lGP5
-          GP4: lGP4
-          GP3: lGP3
-          GP2: lGP2
-          GP1: lGP1
-          GP0: lGP0
-      mcuRight:
-        what: rp2040zero
-        where: mirror_mcu
-        adjust:
-          shift: [rp2040zero_x / 2 + 2.29, -rp2040zero_y / 2]
-        params:
-          P5V: rP5V
-          GND: rGND
-          P3V3: rP3V3
-          GP29: rGP29
-          GP28: rGP28
-          GP27: rGP27
-          GP26: rGP26
-          GP15: rGP15
-          GP14: rGP14
-          GP13: rGP13
-          GP12: rGP12
-          GP11: rGP11
-          GP10: rGP10
-          GP9: rGP9
-          GP8: rGP8
-          GP7: rGP7
-          GP6: rGP6
-          GP5: rGP5
-          GP4: rGP4
-          GP3: rGP3
-          GP2: rGP2
-          GP1: rGP1
-          GP0: rGP0
-      holes:
-        what: mountinghole
-        where: /hole/
