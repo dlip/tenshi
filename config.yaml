@@ -14,14 +14,14 @@ units:
   # Footprints
   rp2040zero_x: 18
   rp2040zero_y: 23.5
-  fpc_x: 5
-  fpc_y: 11
+  fpc_x: 11
+  fpc_y: 5
 points:
   zones:
     matrix:
       mirror: &mirror
         ref: matrix_index_top
-        distance: 52
+        distance: 38
       anchor:
         shift: [30, -80]
       key:
@@ -30,7 +30,7 @@ points:
       columns:
         pinky:
           key:
-            splay: -20
+            splay: -30
             column_net: lGP9
             mirror.column_net: rGP9
         ring:
@@ -71,11 +71,11 @@ points:
         spread: 1kx
       anchor:
         ref: matrix_index_bottom
-        shift: [1.05kx, -.5ky]
+        shift: [1.05kx, -.3ky]
       columns:
         inner:
           key:
-            splay: -10
+            splay: -5
             column_net: lGP11
             mirror.column_net: rGP11
         outer:
@@ -89,14 +89,14 @@ points:
     mcu:
       anchor:
         aggregate.parts: [matrix_index_top, mirror_matrix_index_top]
-        shift: [0, -8]
+        shift: [0, -20]
       key:
         width: rp2040zero_x
         height: rp2040zero_y
     cirque:
       anchor:
         aggregate.parts: [matrix_index_top, mirror_matrix_index_top]
-        shift: [0, -25]
+        shift: [0, -26]
       key:
         width: rp2040zero_x
         height: rp2040zero_y
@@ -142,6 +142,10 @@ outlines:
           shift: [0.5px, 0.5py]
         - ref: matrix_index_top
           shift: [0.5px, 0.5py]
+        - ref: mcu
+          shift: [-rp2040zero_x/2, rp2040zero_y/2]
+        - ref: mcu
+          shift: [rp2040zero_x/2, rp2040zero_y/2]
         - ref: mirror_matrix_index_top
           shift: [0.5px, 0.5py]
         - ref: mirror_matrix_middle_top
@@ -204,7 +208,7 @@ outlines:
       radius: standoffRadius
   _standoffRight:
     - what: circle
-      where: /^hole/
+      where: /^mirror_hole/
       radius: standoffRadius
   combo:
     - ^boardLeft
