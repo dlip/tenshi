@@ -14,8 +14,8 @@ units:
   # Footprints
   rp2040zero_x: 18
   rp2040zero_y: 23.5
-  fpc_x: 11
-  fpc_y: 5
+  fpc_x: 5
+  fpc_y: 11
 points:
   zones:
     matrix:
@@ -31,39 +31,39 @@ points:
         pinky:
           key:
             splay: -30
-            column_net: lGP9
-            mirror.column_net: rGP9
+            column_net: GP10
+            mirror.column_net: GP10
         ring:
           key:
             stagger: 0.33ky
             splay: -3
             spread: 1kx + 2
-            column_net: lGP10
-            mirror.column_net: rGP10
+            column_net: GP11
+            mirror.column_net: GP11
         middle:
           key:
             stagger: 0.33ky
             splay: -2
             spread: 1kx + 1
-            column_net: lGP11
-            mirror.column_net: rGP11
+            column_net: GP12
+            mirror.column_net: GP12
         index:
           key:
             stagger: -0.45ky
             splay: -2
             spread: 1kx + 0.2
-            column_net: lGP12
-            mirror.column_net: rGP12
+            column_net: GP13
+            mirror.column_net: GP13
       rows:
         bottom:
-          row_net: lGP27
-          mirror.row_net: rGP27
+          row_net: GP27
+          mirror.row_net: GP6
         middle:
-          row_net: lGP26
-          mirror.row_net: rGP26
+          row_net: GP28
+          mirror.row_net: GP1
         top:
-          row_net: lGP15
-          mirror.row_net: rGP15
+          row_net: GP29
+          mirror.row_net: GP0
     thumbs:
       mirror: *mirror
       key:
@@ -76,34 +76,34 @@ points:
         inner:
           key:
             splay: -5
-            column_net: lGP11
-            mirror.column_net: rGP11
+            column_net: GP13
+            mirror.column_net: GP10
         outer:
           key:
-            column_net: lGP12
-            mirror.column_net: rGP12
+            column_net: GP12
+            mirror.column_net: GP11
       rows:
         top:
-          row_net: lGP29
-          mirror.row_net: rGP29
+          row_net: GP7
+          mirror.row_net: GP7
     mcu:
       anchor:
         aggregate.parts: [matrix_index_top, mirror_matrix_index_top]
-        shift: [0, -20]
+        shift: [0, -17]
       key:
         width: rp2040zero_x
         height: rp2040zero_y
     cirque:
       anchor:
         aggregate.parts: [matrix_index_top, mirror_matrix_index_top]
-        shift: [0, -26]
+        shift: [0, -26.3]
       key:
         width: rp2040zero_x
         height: rp2040zero_y
     fpc:
       anchor:
         ref: mcu
-        shift: [0kx, -1.28ky]
+        shift: [.89kx, -.5ky]
       key:
         width: fpc_x
         height: fpc_y
@@ -121,7 +121,7 @@ points:
       mirror: *mirror
       anchor:
         ref: [matrix_index_bottom]
-        shift: [0.2kx, -0.7ky]
+        shift: [0.2kx, -0.6ky]
 outlines:
   keys:
     - what: rectangle
@@ -161,11 +161,11 @@ outlines:
         - ref: mirror_thumbs_inner_top
           shift: [-0.5px, -0.5py]
         - ref: mirror_thumbs_outer_top
-          shift: [0.5px, -0.5py] 
+          shift: [0.5px, -0.5py]
         - ref: mirror_thumbs_outer_top
           shift: [0.5px, 0.5py]
         - ref: mirror_thumbs_outer_top
-          shift: [0.5px, 0.5py]                   
+          shift: [0.5px, 0.5py]
         - ref: thumbs_outer_top
           shift: [0.5px, 0.5py]
         - ref: thumbs_outer_top
@@ -221,3 +221,74 @@ outlines:
     - ^_standoffRight
     - ^_mountingLeft
     - ^_mountingRight
+pcbs:
+  koumori:
+    outlines:
+      main:
+        outline: board
+    footprints:
+      chocHotswapLeft:
+        what: choc
+        where: /^(thumb|matrix)/
+        params:
+          keycaps: true
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      diodeLeft:
+        what: diode
+        where: /^(thumb|matrix)/
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -5]
+      chocHotswapRight:
+        what: choc
+        where: /^mirror_(thumb|matrix)/
+        params:
+          keycaps: true
+          hotswap: true
+          from: "{{mirror.column_net}}"
+          to: "{{colrow}}"
+      diodeRight:
+        what: diode
+        where: /^mirror_(thumb|matrix)/
+        params:
+          from: "{{colrow}}"
+          to: "{{mirror.row_net}}"
+        adjust:
+          shift: [0, -5]
+      mcu:
+        what: rp2040zero
+        where: mcu
+        adjust:
+          shift: [-rp2040zero_x / 2 - 1.2, -rp2040zero_y / 2 - 1]
+        params:
+          reverse: true
+          P5V: P5V
+          GND: GND
+          P3V3: P3V3
+          GP29: GP29
+          GP28: GP28
+          GP27: GP27
+          GP26: GP26
+          GP15: GP15
+          GP14: GP14
+          GP13: GP13
+          GP12: GP12
+          GP11: GP11
+          GP10: GP10
+          GP9: GP9
+          GP8: GP8
+          GP7: GP7
+          GP6: GP6
+          GP5: GP5
+          GP4: GP4
+          GP3: GP3
+          GP2: GP2
+          GP1: GP1
+          GP0: GP0
+      holes:
+        what: mountinghole
+        where: /hole/
